@@ -1,0 +1,21 @@
+{
+  "name": "rpg-game",
+  "version": "1.0.0",
+  "description": "A simple RPG game where players can choose characters to navigate through a randomly generated dungeon.",
+  "main": "src/game.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/game.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  },
+  "keywords": [
+    "rpg",
+    "game",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
