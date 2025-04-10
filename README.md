@@ -24,7 +24,7 @@ This is a simple RPG game where players can choose from various character classe
 ### Installation
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/lumberjesus/RPG
    ```
 2. Navigate to the project directory:
    ```
