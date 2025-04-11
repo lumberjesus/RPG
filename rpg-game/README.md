@@ -7,7 +7,6 @@ This is a simple RPG game where players can choose from various character classe
 - **Warrior**: A strong fighter skilled in attack and defense.
 - **Rogue**: A stealthy character adept at sneaking and picking pockets.
 - **Bard**: A performer who can sing songs and cast spells.
-- **Chef**: A culinary expert who can cook meals and prepare dishes.
 - **Comedian**: A humorous character who entertains audiences with jokes.
 
 ## Features
@@ -24,7 +23,7 @@ This is a simple RPG game where players can choose from various character classe
 ### Installation
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/lumberjesus/RPG
    ```
 2. Navigate to the project directory:
    ```
@@ -50,4 +49,4 @@ npm start
 Feel free to submit issues or pull requests to improve the game. Contributions are welcome!
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the MIT License.# RPG

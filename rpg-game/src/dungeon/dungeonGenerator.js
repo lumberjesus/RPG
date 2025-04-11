@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateDungeon = generateDungeon;
+exports.generateDungeon = void 0;
 const enemies_1 = require("./enemies");
 const healer_1 = require("./healer");
 function generateDungeon() {
@@ -29,6 +29,7 @@ function generateDungeon() {
     }
     return dungeon;
 }
+exports.generateDungeon = generateDungeon;
 // Example interaction logic
 function interactWithHealer(playerHealth) {
     const healResult = healer_1.healer.healAction();
@@ -44,3 +45,42 @@ const interaction = interactWithHealer(playerHealth);
 console.log(interaction.message); // "The Healer restores your health by 20 points!"
 playerHealth = interaction.newHealth;
 console.log(`Player's new health: ${playerHealth}`); // Player's new health: 70
+function displayDungeon(dungeon, playerPosition) {
+    for (let i = 0; i < dungeon.length; i++) {
+        let row = '';
+        for (let j = 0; j < dungeon[i].length; j++) {
+            if (i === playerPosition.y && j === playerPosition.x) {
+                row += 'P '; // Player's position
+            }
+            else {
+                row += dungeon[i][j] + ' ';
+            }
+        }
+        console.log(row);
+    }
+}
+function movePlayer(dungeon, playerPosition, direction) {
+    const newPosition = Object.assign({}, playerPosition);
+    if (direction === 'w' && playerPosition.y > 0) {
+        newPosition.y -= 1; // Move up
+    }
+    else if (direction === 's' && playerPosition.y < dungeon.length - 1) {
+        newPosition.y += 1; // Move down
+    }
+    else if (direction === 'a' && playerPosition.x > 0) {
+        newPosition.x -= 1; // Move left
+    }
+    else if (direction === 'd' && playerPosition.x < dungeon[0].length - 1) {
+        newPosition.x += 1; // Move right
+    }
+    const cell = dungeon[newPosition.y][newPosition.x];
+    if (cell === 'W') {
+        console.log("You can't move there, it's a wall!");
+        return playerPosition; // Return the original position
+    }
+    else if (cell !== '.' && cell !== 'P') {
+        console.log(`You encountered an enemy: ${cell}!`);
+        // Add combat logic here
+    }
+    return newPosition; // Return the updated position
+}
